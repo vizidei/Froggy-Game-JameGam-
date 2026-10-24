@@ -1,3 +1,11 @@
 [gd_scene format=3 uid="uid://cbut36mpgno73"]
 
+[ext_resource type="PackedScene" uid="uid://nria4x2luula" path="res://scenes/froggy.tscn" id="1_o5qli"]
+
 [node name="Main" type="Node2D" unique_id=1120437385]
+
+[node name="Froggy" parent="." unique_id=731350036 instance=ExtResource("1_o5qli")]
+position = Vector2(12.401001, -1.7716064)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=39555379]
+zoom = Vector2(1.3, 1.3)

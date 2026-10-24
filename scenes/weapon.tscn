@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://3kgbidjexydg"]
+
+[ext_resource type="Script" uid="uid://xmn8c5firpsv" path="res://scripts/weapon.gd" id="1_uxn4k"]
+[ext_resource type="Texture2D" uid="uid://b6tbbvlk1kfga" path="res://icon.svg" id="2_bmw2d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8fp1k"]
+size = Vector2(167.54318, 124.18428)
+
+[node name="Weapon" type="Node2D" unique_id=1297015559]
+script = ExtResource("1_uxn4k")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1404857745]
+texture = ExtResource("2_bmw2d")
+offset = Vector2(-0.047317505, -62.586624)
+region_enabled = true
+region_rect = Rect2(55, 0, 20, 128)
+
+[node name="HitBox" type="Area2D" parent="." unique_id=681473496]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=162181901]
+position = Vector2(-0.5938568, -177.49132)
+shape = SubResource("RectangleShape2D_8fp1k")
