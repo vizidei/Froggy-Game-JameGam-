@@ -1,11 +1,50 @@
 [gd_scene format=3 uid="uid://cbut36mpgno73"]
 
 [ext_resource type="PackedScene" uid="uid://nria4x2luula" path="res://scenes/froggy.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://g0y18wjh25nq" path="res://scenes/enemy.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://c3c8mwdb3e10e" path="res://scenes/lilipad.tscn" id="3_sugp2"]
 
 [node name="Main" type="Node2D" unique_id=1120437385]
 
 [node name="Froggy" parent="." unique_id=731350036 instance=ExtResource("1_o5qli")]
-position = Vector2(12.401001, -1.7716064)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=39555379]
 zoom = Vector2(1.3, 1.3)
+
+[node name="Enemy" parent="." unique_id=1788764905 instance=ExtResource("2_0wfyh")]
+position = Vector2(496.8418, -198.96742)
+
+[node name="Enemy2" parent="." unique_id=2030460773 instance=ExtResource("2_0wfyh")]
+position = Vector2(-435.14856, 229.36404)
+
+[node name="Enemy3" parent="." unique_id=1841320410 instance=ExtResource("2_0wfyh")]
+position = Vector2(724.5332, 334.3999)
+
+[node name="Lilipad" parent="." unique_id=844435388 instance=ExtResource("3_sugp2")]
+position = Vector2(0.73516846, 7.553406)
+
+[node name="Lilipad2" parent="." unique_id=1489043572 instance=ExtResource("3_sugp2")]
+position = Vector2(-249.2074, 9.911377)
+
+[node name="Lilipad3" parent="." unique_id=2136037771 instance=ExtResource("3_sugp2")]
+position = Vector2(-100.65668, -126.84961)
+
+[node name="Lilipad4" parent="." unique_id=1259561935 instance=ExtResource("3_sugp2")]
+position = Vector2(-154.88947, 170.25189)
+
+[node name="Lilipad5" parent="." unique_id=2013278657 instance=ExtResource("3_sugp2")]
+position = Vector2(87.97919, 139.59857)
+
+[node name="Lilipad6" parent="." unique_id=767106821 instance=ExtResource("3_sugp2")]
+position = Vector2(262.46735, 0.47961426)
+
+[node name="Lilipad7" parent="." unique_id=1973767591 instance=ExtResource("3_sugp2")]
+position = Vector2(120.99054, -131.56552)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=452903664]
+z_index = -1
+offset_left = -860.65125
+offset_top = -860.30994
+offset_right = 900.30994
+offset_bottom = 589.4021
+color = Color(0.29411766, 0.36078432, 1, 1)

@@ -229,6 +229,7 @@ joypads/ignore_joypad_on_unfocused_application=true
 [layer_names]
 
 2d_physics/layer_1="world"
+2d_physics/layer_3="lilipad"
 2d_physics/layer_5="player"
 2d_physics/layer_6="enemy"
 

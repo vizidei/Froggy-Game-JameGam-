@@ -2,6 +2,8 @@ extends Node2D
 
 @onready var hit_box: Area2D = $HitBox
 
+const DAMAGE : int = 30
+
 const SWING_ARC : float = PI      # 180 degrees
 const SWING_TIME : float = 0.2
 
@@ -21,6 +23,7 @@ func swing() -> void:
 	swinging = true
 	hit_bodies.clear()
 
+
 	var base_angle : float = rotation  # the weapon is already aiming at the mouse
 	rotation = base_angle - SWING_ARC / 2.0
 	hit_box.monitoring = true
@@ -32,9 +35,13 @@ func swing() -> void:
 	hit_box.monitoring = false
 	swinging = false
 
-func _on_hitbox_body_entered(body: Node2D) -> void:
+
+
+func _on_hit_box_body_entered(body: Node2D) -> void:
 	if body in hit_bodies:
 		return  # one hit per enemy per swing
 	hit_bodies.append(body)
-	if body.has_method("launch"):
-		body.launch(global_position.direction_to(body.global_position))
+	if body.has_method("take_damage") and swinging:
+		body.take_damage(DAMAGE , global_position.direction_to(body.global_position))
+	#if body.has_method("launch"):
+		#body.launch(global_position.direction_to(body.global_position))

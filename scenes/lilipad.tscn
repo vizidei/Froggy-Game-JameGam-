@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://c3c8mwdb3e10e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uxn4k"]
+radius = 59.43189
+
+[node name="Lilipad" type="Area2D" unique_id=844435388]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1887909707]
+shape = SubResource("CircleShape2D_uxn4k")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1152286477]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.490463
+offset_top = -45.490463
+offset_right = 45.490463
+offset_bottom = 45.490463
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.30814862, 0.8813526, 0.3033719, 1)
