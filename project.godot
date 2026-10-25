@@ -11,9 +11,18 @@ config_version=5
 [application]
 
 config/name="Froggy Game"
-run/main_scene="uid://cbut36mpgno73"
+run/main_scene="uid://sr88jbh155l0"
 config/features=PackedStringArray("4.8", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://ju5je7owg1xy"
+
+[autoload]
+
+ScoreManager="*uid://x8gmroffc35j"
+BackgroundMusic="*uid://db27kasicn7mt"
 
 [display]
 

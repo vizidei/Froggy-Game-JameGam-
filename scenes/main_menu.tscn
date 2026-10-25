@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://sr88jbh155l0"]
+
+[ext_resource type="Script" uid="uid://d170e7uk620fa" path="res://scripts/main_menu.gd" id="1_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://pa2aka4v3f6e" path="res://assets/froggy/lilypad.png" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://i2kptu5ak57b" path="res://assets/froggy/frog.png" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://4rh1xjaywkhc" path="res://assets/froggy/flower2.png" id="4_wu84c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekxnf"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="MainMenu" type="Control" unique_id=807515681]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bqqt6")
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1368962830]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5686275, 0.7058824, 0.85882354, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1059826016]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.666
+anchor_top = 0.284
+anchor_right = 0.666
+anchor_bottom = 0.284
+offset_left = -289.4035
+offset_top = -142.47253
+offset_right = 289.5965
+offset_bottom = 103.527466
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 180
+text = "Froggy"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1472831722]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.22600001
+anchor_top = 0.72
+anchor_right = 0.22600001
+anchor_bottom = 0.72
+offset_left = -292.8516
+offset_top = -204.64929
+offset_right = 1702.136
+offset_bottom = 1189.538
+scale = Vector2(0.29356557, 0.29356557)
+texture = ExtResource("1_l6cm7")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=31382880]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.21100001
+anchor_top = 0.629
+anchor_right = 0.21100001
+anchor_bottom = 0.629
+offset_left = -144.24525
+offset_top = -143.62936
+offset_right = 143.20811
+offset_bottom = 143.824
+texture = ExtResource("2_ekxnf")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=121715550]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.21100001
+anchor_top = 0.629
+anchor_right = 0.21100001
+anchor_bottom = 0.629
+offset_left = -295.49524
+offset_top = -189.60938
+offset_right = -8.041885
+offset_bottom = 97.843994
+texture = ExtResource("4_wu84c")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2014747815]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.674
+anchor_top = 0.69100004
+anchor_right = 0.674
+anchor_bottom = 0.69100004
+offset_left = -100.49988
+offset_top = -102.31363
+offset_right = 99.50012
+offset_bottom = 101.68637
+
+[node name="Start" type="Button" parent="VBoxContainer" unique_id=1457228814]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.23753911, 0.23753914, 0.23753911, 1)
+theme_override_colors/font_hover_color = Color(0.52114046, 0.52114046, 0.52114147, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_ekxnf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ekxnf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ekxnf")
+text = "Play"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=405775608]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.23753911, 0.23753914, 0.23753911, 1)
+theme_override_colors/font_hover_color = Color(0.52114046, 0.52114046, 0.52114147, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_ekxnf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ekxnf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ekxnf")
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

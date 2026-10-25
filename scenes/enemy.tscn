@@ -1,29 +1,20 @@
 [gd_scene format=3 uid="uid://g0y18wjh25nq"]
 
-[ext_resource type="Texture2D" uid="uid://b6tbbvlk1kfga" path="res://icon.svg" id="1_7p1mj"]
 [ext_resource type="Script" uid="uid://dqiu606w4u28a" path="res://scripts/enemy.gd" id="1_md0e3"]
+[ext_resource type="Texture2D" uid="uid://2edwfj5kodxu" path="res://assets/froggy/mosquito.png" id="2_md0e3"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_4ra3w"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_7p1mj")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_md0e3"]
-size = Vector2(137.77641, 127.80652)
+[sub_resource type="CircleShape2D" id="CircleShape2D_h58tt"]
+radius = 62.34782
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1788764905]
+z_index = 2
 collision_layer = 32
-collision_mask = 49
+collision_mask = 17
 script = ExtResource("1_md0e3")
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=386329517]
-sprite_frames = SubResource("SpriteFrames_4ra3w")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=929454354]
+scale = Vector2(0.088674515, 0.088674515)
+texture = ExtResource("2_md0e3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=370617107]
-shape = SubResource("RectangleShape2D_md0e3")
+shape = SubResource("CircleShape2D_h58tt")

@@ -1,25 +1,21 @@
 [gd_scene format=3 uid="uid://c3c8mwdb3e10e"]
 
+[ext_resource type="Texture2D" uid="uid://pa2aka4v3f6e" path="res://assets/froggy/lilypad.png" id="1_hkbhg"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_uxn4k"]
-radius = 59.43189
+radius = 82.66145
 
 [node name="Lilipad" type="Area2D" unique_id=844435388]
 collision_layer = 4
 collision_mask = 0
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1108418484]
+position = Vector2(0.6091919, 1.5938225)
+scale = Vector2(0.09336419, 0.09336419)
+texture = ExtResource("1_hkbhg")
+offset = Vector2(47.97339, 10.184998)
+region_enabled = true
+region_rect = Rect2(102.3313, 0, 1762.6062, 2048)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1887909707]
 shape = SubResource("CircleShape2D_uxn4k")
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1152286477]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -45.490463
-offset_top = -45.490463
-offset_right = 45.490463
-offset_bottom = 45.490463
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.30814862, 0.8813526, 0.3033719, 1)

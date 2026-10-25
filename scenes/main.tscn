@@ -1,50 +1,395 @@
 [gd_scene format=3 uid="uid://cbut36mpgno73"]
 
 [ext_resource type="PackedScene" uid="uid://nria4x2luula" path="res://scenes/froggy.tscn" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://bwycpi0tl738x" path="res://scripts/main.gd" id="1_tefeu"]
 [ext_resource type="PackedScene" uid="uid://g0y18wjh25nq" path="res://scenes/enemy.tscn" id="2_0wfyh"]
+[ext_resource type="Script" uid="uid://bqd4ynbr3256h" path="res://scripts/spawner.gd" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://c3c8mwdb3e10e" path="res://scenes/lilipad.tscn" id="3_sugp2"]
+[ext_resource type="Script" uid="uid://bibxvchkquyc2" path="res://scripts/hud.gd" id="6_o6xl0"]
+[ext_resource type="Script" uid="uid://djnoty14eqc2p" path="res://scripts/game_over.gd" id="7_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://fk6cg67piloi" path="res://assets/froggy/flower1.png" id="8_85g3d"]
+[ext_resource type="AudioStream" uid="uid://cie7r4fc80mid" path="res://assets/freesound_community-mosquito-buzzing-24278.wav" id="8_choun"]
+[ext_resource type="Texture2D" uid="uid://4rh1xjaywkhc" path="res://assets/froggy/flower2.png" id="9_choun"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_elp06"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vucmx"]
+bg_color = Color(0.56078434, 0.3372549, 0.4627451, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vriq2"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="Main" type="Node2D" unique_id=1120437385]
+script = ExtResource("1_tefeu")
 
 [node name="Froggy" parent="." unique_id=731350036 instance=ExtResource("1_o5qli")]
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=39555379]
-zoom = Vector2(1.3, 1.3)
-
-[node name="Enemy" parent="." unique_id=1788764905 instance=ExtResource("2_0wfyh")]
-position = Vector2(496.8418, -198.96742)
-
-[node name="Enemy2" parent="." unique_id=2030460773 instance=ExtResource("2_0wfyh")]
-position = Vector2(-435.14856, 229.36404)
-
-[node name="Enemy3" parent="." unique_id=1841320410 instance=ExtResource("2_0wfyh")]
-position = Vector2(724.5332, 334.3999)
-
-[node name="Lilipad" parent="." unique_id=844435388 instance=ExtResource("3_sugp2")]
-position = Vector2(0.73516846, 7.553406)
-
-[node name="Lilipad2" parent="." unique_id=1489043572 instance=ExtResource("3_sugp2")]
-position = Vector2(-249.2074, 9.911377)
-
-[node name="Lilipad3" parent="." unique_id=2136037771 instance=ExtResource("3_sugp2")]
-position = Vector2(-100.65668, -126.84961)
-
-[node name="Lilipad4" parent="." unique_id=1259561935 instance=ExtResource("3_sugp2")]
-position = Vector2(-154.88947, 170.25189)
-
-[node name="Lilipad5" parent="." unique_id=2013278657 instance=ExtResource("3_sugp2")]
-position = Vector2(87.97919, 139.59857)
-
-[node name="Lilipad6" parent="." unique_id=767106821 instance=ExtResource("3_sugp2")]
-position = Vector2(262.46735, 0.47961426)
-
-[node name="Lilipad7" parent="." unique_id=1973767591 instance=ExtResource("3_sugp2")]
-position = Vector2(120.99054, -131.56552)
-
 [node name="ColorRect" type="ColorRect" parent="." unique_id=452903664]
 z_index = -1
-offset_left = -860.65125
-offset_top = -860.30994
-offset_right = 900.30994
-offset_bottom = 589.4021
-color = Color(0.29411766, 0.36078432, 1, 1)
+offset_left = -1742.5284
+offset_top = -1540.3662
+offset_right = 1726.3722
+offset_bottom = 1315.4077
+color = Color(0.5686275, 0.7058824, 0.85882354, 1)
+
+[node name="Lilypads" type="Node2D" parent="." unique_id=2093095705]
+
+[node name="Lilipad" parent="Lilypads" unique_id=844435388 instance=ExtResource("3_sugp2")]
+position = Vector2(0.73516846, 7.553406)
+
+[node name="Lilipad2" parent="Lilypads" unique_id=1489043572 instance=ExtResource("3_sugp2")]
+position = Vector2(-249.2074, 9.911377)
+
+[node name="Lilipad3" parent="Lilypads" unique_id=2136037771 instance=ExtResource("3_sugp2")]
+position = Vector2(-100.65668, -126.84961)
+
+[node name="Lilipad4" parent="Lilypads" unique_id=1259561935 instance=ExtResource("3_sugp2")]
+position = Vector2(-154.88947, 170.25189)
+
+[node name="Lilipad5" parent="Lilypads" unique_id=2013278657 instance=ExtResource("3_sugp2")]
+position = Vector2(87.97919, 139.59857)
+
+[node name="Lilipad6" parent="Lilypads" unique_id=767106821 instance=ExtResource("3_sugp2")]
+position = Vector2(262.46735, 0.47961426)
+
+[node name="Lilipad7" parent="Lilypads" unique_id=1973767591 instance=ExtResource("3_sugp2")]
+position = Vector2(120.99054, -131.56552)
+
+[node name="Lilipad8" parent="Lilypads" unique_id=1382457480 instance=ExtResource("3_sugp2")]
+position = Vector2(312.31915, 189.08707)
+
+[node name="Lilipad9" parent="Lilypads" unique_id=1462184623 instance=ExtResource("3_sugp2")]
+position = Vector2(462.9018, 1.3015442)
+
+[node name="Lilipad10" parent="Lilypads" unique_id=1995488638 instance=ExtResource("3_sugp2")]
+position = Vector2(-270.52448, -237.85919)
+rotation = -2.3561945
+
+[node name="Lilipad25" parent="Lilypads" unique_id=931126982 instance=ExtResource("3_sugp2")]
+position = Vector2(-654.8315, -229.5047)
+rotation = -2.3561945
+
+[node name="Lilipad24" parent="Lilypads" unique_id=1347681635 instance=ExtResource("3_sugp2")]
+position = Vector2(-441.7917, -367.35394)
+
+[node name="Lilipad11" parent="Lilypads" unique_id=1002221321 instance=ExtResource("3_sugp2")]
+position = Vector2(363.81854, -182.92844)
+
+[node name="Lilipad26" parent="Lilypads" unique_id=1085887588 instance=ExtResource("3_sugp2")]
+position = Vector2(581.0356, -187.10568)
+
+[node name="Lilipad12" parent="Lilypads" unique_id=887329995 instance=ExtResource("3_sugp2")]
+position = Vector2(273.3448, -333.52347)
+
+[node name="Lilipad13" parent="Lilypads" unique_id=1644868541 instance=ExtResource("3_sugp2")]
+position = Vector2(12.925293, -298.0923)
+
+[node name="Lilipad14" parent="Lilypads" unique_id=1086518107 instance=ExtResource("3_sugp2")]
+position = Vector2(12.925293, -298.0923)
+
+[node name="Lilipad15" parent="Lilypads" unique_id=1906204291 instance=ExtResource("3_sugp2")]
+position = Vector2(12.925293, -298.0923)
+
+[node name="Lilipad16" parent="Lilypads" unique_id=1299022741 instance=ExtResource("3_sugp2")]
+position = Vector2(12.925293, -298.0923)
+
+[node name="Lilipad17" parent="Lilypads" unique_id=793701192 instance=ExtResource("3_sugp2")]
+position = Vector2(-456.5208, -113.74362)
+
+[node name="Lilipad18" parent="Lilypads" unique_id=1418822488 instance=ExtResource("3_sugp2")]
+position = Vector2(-613.0028, 4.153778)
+
+[node name="Lilipad19" parent="Lilypads" unique_id=1951371090 instance=ExtResource("3_sugp2")]
+position = Vector2(-184.28491, -411.7025)
+
+[node name="Lilipad20" parent="Lilypads" unique_id=1769134483 instance=ExtResource("3_sugp2")]
+position = Vector2(102.956055, -452.4307)
+
+[node name="Lilipad21" parent="Lilypads" unique_id=1451174357 instance=ExtResource("3_sugp2")]
+position = Vector2(-452.23358, 152.0615)
+
+[node name="Lilipad22" parent="Lilypads" unique_id=1772437898 instance=ExtResource("3_sugp2")]
+position = Vector2(493.08936, -375.2615)
+
+[node name="Lilipad23" parent="Lilypads" unique_id=403337583 instance=ExtResource("3_sugp2")]
+position = Vector2(347.3252, -518.88196)
+
+[node name="Flower1" type="Sprite2D" parent="Lilypads" unique_id=1523720254]
+position = Vector2(-645.63104, -39.05745)
+scale = Vector2(0.07920249, 0.07920249)
+texture = ExtResource("8_85g3d")
+
+[node name="Flower2" type="Sprite2D" parent="Lilypads" unique_id=998042174]
+position = Vector2(-268.11102, -310.09747)
+scale = Vector2(0.07920249, 0.07920249)
+texture = ExtResource("8_85g3d")
+
+[node name="Flower3" type="Sprite2D" parent="Lilypads" unique_id=1003539509]
+position = Vector2(91.25891, -308.8875)
+scale = Vector2(0.07920249, 0.07920249)
+texture = ExtResource("8_85g3d")
+
+[node name="Flower12" type="Sprite2D" parent="Lilypads" unique_id=972964446]
+position = Vector2(564.8766, -374.50922)
+scale = Vector2(0.07920249, 0.07920249)
+texture = ExtResource("8_85g3d")
+
+[node name="Flower13" type="Sprite2D" parent="Lilypads" unique_id=9636937]
+position = Vector2(173.99951, -599.9055)
+scale = Vector2(0.07920249, 0.07920249)
+texture = ExtResource("8_85g3d")
+
+[node name="Flower14" type="Sprite2D" parent="Lilypads" unique_id=2111519188]
+position = Vector2(-527.86743, -274.65015)
+scale = Vector2(0.07920249, 0.07920249)
+texture = ExtResource("8_85g3d")
+
+[node name="Flower15" type="Sprite2D" parent="Lilypads" unique_id=1698594659]
+position = Vector2(-656.2577, 193.26111)
+scale = Vector2(0.07920249, 0.07920249)
+texture = ExtResource("8_85g3d")
+
+[node name="Flower16" type="Sprite2D" parent="Lilypads" unique_id=1288127747]
+position = Vector2(604.5121, 197.05872)
+scale = Vector2(0.07920249, 0.07920249)
+texture = ExtResource("8_85g3d")
+
+[node name="Flower24" type="Sprite2D" parent="Lilypads" unique_id=1392567385]
+position = Vector2(-177.7727, -581.4286)
+scale = Vector2(0.07920249, 0.07920249)
+texture = ExtResource("8_85g3d")
+
+[node name="Flower25" type="Sprite2D" parent="Lilypads" unique_id=397959776]
+position = Vector2(-132.20276, -634.59357)
+scale = Vector2(0.07920249, 0.07920249)
+texture = ExtResource("8_85g3d")
+
+[node name="Flower26" type="Sprite2D" parent="Lilypads" unique_id=2133284778]
+position = Vector2(-208.15271, -645.9861)
+scale = Vector2(0.07920249, 0.07920249)
+texture = ExtResource("8_85g3d")
+
+[node name="Flower27" type="Sprite2D" parent="Lilypads" unique_id=1267177895]
+position = Vector2(-352.45776, 367.9463)
+scale = Vector2(0.07920249, 0.07920249)
+texture = ExtResource("8_85g3d")
+
+[node name="Flower28" type="Sprite2D" parent="Lilypads" unique_id=93645887]
+position = Vector2(99.44458, 246.42627)
+scale = Vector2(0.07920249, 0.07920249)
+texture = ExtResource("8_85g3d")
+
+[node name="Flower17" type="Sprite2D" parent="Lilypads" unique_id=1241476929]
+position = Vector2(832.36194, -83.9563)
+scale = Vector2(0.07920249, 0.07920249)
+texture = ExtResource("8_85g3d")
+
+[node name="Flower4" type="Sprite2D" parent="Lilypads" unique_id=2085634299]
+position = Vector2(319.2588, 39.932922)
+scale = Vector2(0.07920249, 0.07920249)
+texture = ExtResource("8_85g3d")
+
+[node name="Flower5" type="Sprite2D" parent="Lilypads" unique_id=1152904365]
+position = Vector2(-201.04883, 211.4201)
+scale = Vector2(0.07920249, 0.07920249)
+texture = ExtResource("8_85g3d")
+
+[node name="Flower6" type="Sprite2D" parent="Lilypads" unique_id=1005126498]
+position = Vector2(361.55096, 242.0491)
+scale = Vector2(0.15432215, 0.15432215)
+texture = ExtResource("9_choun")
+
+[node name="Flower7" type="Sprite2D" parent="Lilypads" unique_id=436694632]
+position = Vector2(552.70984, -425.5804)
+scale = Vector2(0.15432215, 0.15432215)
+texture = ExtResource("9_choun")
+
+[node name="Flower8" type="Sprite2D" parent="Lilypads" unique_id=395517659]
+position = Vector2(809.4905, -348.54623)
+scale = Vector2(0.15432215, 0.15432215)
+texture = ExtResource("9_choun")
+
+[node name="Flower9" type="Sprite2D" parent="Lilypads" unique_id=1981627812]
+position = Vector2(626.8911, -128.85617)
+scale = Vector2(0.15432215, 0.15432215)
+texture = ExtResource("9_choun")
+
+[node name="Flower18" type="Sprite2D" parent="Lilypads" unique_id=103441299]
+position = Vector2(-387.04114, -440.25113)
+scale = Vector2(0.15432215, 0.15432215)
+texture = ExtResource("9_choun")
+
+[node name="Flower19" type="Sprite2D" parent="Lilypads" unique_id=186622599]
+position = Vector2(-421.21863, 349.6287)
+scale = Vector2(0.15432215, 0.15432215)
+texture = ExtResource("9_choun")
+
+[node name="Flower20" type="Sprite2D" parent="Lilypads" unique_id=11820236]
+position = Vector2(-880.71606, -60.501312)
+scale = Vector2(0.15432215, 0.15432215)
+texture = ExtResource("9_choun")
+
+[node name="Flower21" type="Sprite2D" parent="Lilypads" unique_id=1140125453]
+position = Vector2(-284.50867, -56.703827)
+scale = Vector2(0.15432215, 0.15432215)
+texture = ExtResource("9_choun")
+
+[node name="Flower22" type="Sprite2D" parent="Lilypads" unique_id=884021902]
+position = Vector2(72.4563, 444.56607)
+scale = Vector2(0.15432215, 0.15432215)
+texture = ExtResource("9_choun")
+
+[node name="Flower23" type="Sprite2D" parent="Lilypads" unique_id=2093278896]
+position = Vector2(562.33374, 463.5535)
+scale = Vector2(0.15432215, 0.15432215)
+texture = ExtResource("9_choun")
+
+[node name="Flower10" type="Sprite2D" parent="Lilypads" unique_id=1697390930]
+position = Vector2(61.973877, -496.9083)
+scale = Vector2(0.15432215, 0.15432215)
+texture = ExtResource("9_choun")
+
+[node name="Flower11" type="Sprite2D" parent="Lilypads" unique_id=1488503187]
+position = Vector2(-691.2492, -285.77756)
+scale = Vector2(0.15432215, 0.15432215)
+texture = ExtResource("9_choun")
+
+[node name="Spawner" type="Node2D" parent="." unique_id=938055907]
+script = ExtResource("3_jyhfs")
+bug_scene = ExtResource("2_0wfyh")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Spawner" unique_id=822831870]
+stream = ExtResource("8_choun")
+volume_db = -2.0
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1751004565]
+script = ExtResource("6_o6xl0")
+
+[node name="ScoreLabel" type="Label" parent="HUD" unique_id=1482161906]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -167.31818
+offset_right = -116.31818
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.8235294)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+
+[node name="ComboLabel" type="Label" parent="HUD" unique_id=38676765]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 69.35162
+offset_right = 130.35162
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.8235294)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+
+[node name="HealthBar" type="ProgressBar" parent="HUD" unique_id=1462235926]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -174.36453
+offset_top = -27.0
+offset_right = 174.36453
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxEmpty_elp06")
+theme_override_styles/fill = SubResource("StyleBoxFlat_vucmx")
+value = 100.0
+fill_mode = 1
+show_percentage = false
+
+[node name="GameOver" type="CanvasLayer" parent="." unique_id=2137816006]
+process_mode = 3
+visible = false
+script = ExtResource("7_o6xl0")
+
+[node name="ColorRect" type="ColorRect" parent="GameOver" unique_id=584243271]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.32156864)
+
+[node name="Label" type="Label" parent="GameOver/ColorRect" unique_id=1873370821]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -454.0
+offset_top = -323.91907
+offset_right = 454.0
+offset_bottom = -46.919067
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.8235294)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 203
+text = "You died!"
+
+[node name="HighScoreLabel" type="Label" parent="GameOver/ColorRect" unique_id=1896593579]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -454.0
+offset_top = -69.26074
+offset_right = 454.0
+offset_bottom = 207.73926
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.85882354, 0.8509804, 0.5686275, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.8235294)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 100
+text = "Score"
+horizontal_alignment = 1
+
+[node name="Retry" type="Button" parent="GameOver/ColorRect" unique_id=859524016]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = 108.31268
+offset_right = 100.0
+offset_bottom = 208.31268
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.76240367, 0.76240367, 0.76240367, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.3779188, 0.37791887, 0.37791884, 1)
+theme_override_constants/outline_size = -3
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_vriq2")
+text = "RETRY"
+
+[connection signal="player_died" from="Froggy" to="." method="_on_froggy_player_died"]
+[connection signal="pressed" from="GameOver/ColorRect/Retry" to="GameOver" method="_on_retry_pressed"]

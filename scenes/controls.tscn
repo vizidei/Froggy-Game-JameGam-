@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://k1oe187lbje1"]
+
+[ext_resource type="Script" uid="uid://csqcjt8rg5qxh" path="res://scripts/controls.gd" id="1_ihl6s"]
+[ext_resource type="Texture2D" uid="uid://pa2aka4v3f6e" path="res://assets/froggy/lilypad.png" id="2_jlst0"]
+[ext_resource type="Texture2D" uid="uid://i2kptu5ak57b" path="res://assets/froggy/frog.png" id="3_dloai"]
+[ext_resource type="Texture2D" uid="uid://cr7m5qlth4v1c" path="res://assets/froggy/nail weapon.png" id="4_jlst0"]
+[ext_resource type="Texture2D" uid="uid://4rh1xjaywkhc" path="res://assets/froggy/flower2.png" id="4_k6bol"]
+
+[node name="Controls" type="Control" unique_id=807515681]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ihl6s")
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1368962830]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5686275, 0.7058824, 0.85882354, 1)
+
+[node name="Label" type="RichTextLabel" parent="." unique_id=1120260844]
+z_index = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.633
+anchor_top = 0.5
+anchor_right = 0.633
+anchor_bottom = 0.5
+offset_left = -503.02643
+offset_top = -323.3821
+offset_right = 503.41693
+offset_bottom = 337.13757
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/normal_font_size = 25
+text = "
+Froggy has to defend himself with the big \"thing\" he found
+Survive as long as you can and smash as many bugs as possible.
+
+CONTROLS
+WASD ........ Move
+Mouse ....... Aim your weapon
+Left Click .. Swing (it launches bugs away)
+Space ....... Dash toward the cursor
+
+TIPS
+- Stay on the lilypads. Water slows you down and hurts you.
+- Dashing flies you over water, but the landing is up to you.
+- Swinging jolts your cursor, so aim your next dash carefully!
+- Chain kills quickly to build a combo and score more.
+
+Press any key to start"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1472831722]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.22600001
+anchor_top = 0.72
+anchor_right = 0.22600001
+anchor_bottom = 0.72
+offset_left = -292.8516
+offset_top = -204.64929
+offset_right = 1702.136
+offset_bottom = 1189.538
+scale = Vector2(0.29356557, 0.29356557)
+texture = ExtResource("2_jlst0")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=31382880]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.21100001
+anchor_top = 0.629
+anchor_right = 0.21100001
+anchor_bottom = 0.629
+offset_left = -144.24525
+offset_top = -143.62936
+offset_right = 143.20811
+offset_bottom = 143.824
+texture = ExtResource("3_dloai")
+expand_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="." unique_id=2125339325]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35000002
+anchor_top = 0.58900005
+anchor_right = 0.35000002
+anchor_bottom = 0.58900005
+offset_left = -148.20358
+offset_top = -103.789246
+offset_right = 860.6506
+offset_bottom = 601.2435
+scale = Vector2(0.29356557, 0.29356557)
+texture = ExtResource("4_jlst0")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=121715550]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.079
+anchor_top = 0.558
+anchor_right = 0.079
+anchor_bottom = 0.558
+offset_left = -143.43124
+offset_top = -143.60138
+offset_right = 144.02213
+offset_bottom = 143.85199
+texture = ExtResource("4_k6bol")
+expand_mode = 1
