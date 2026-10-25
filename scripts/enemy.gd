@@ -1,5 +1,15 @@
 extends CharacterBody2D
 
+const WOBBLE_SPEED : float = 12.0
+const WOBBLE_ANGLE : float = 0.12    # radians, about 7 degrees
+const BUZZ_SPEED : float = 20.0
+const BUZZ_AMOUNT : float = 0.08     # squish strength
+
+var anim_time : float = 0.0
+var phase : float = randf() * TAU    # random offset so bugs don't move in sync
+var facing_rot : float = 0.0
+var base_scale : Vector2
+
 const SPEED : float = 100.0        
 const LAUNCH_SPEED : float = 400.0
 const LAUNCH_DRAG : float = 2.0
@@ -17,8 +27,11 @@ var launch_velocity : Vector2 = Vector2.ZERO
 var spin : float = 0.0
 var player : Node2D
 
+var immune_until : int = 0
+
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
+	base_scale = sprite.scale
 
 func _physics_process(delta: float) -> void:
 	if dead:
@@ -32,12 +45,20 @@ func _physics_process(delta: float) -> void:
 		var dir : Vector2 = global_position.direction_to(player.global_position)
 		velocity = dir * SPEED
 		move_and_slide()
-		sprite.rotation = lerp_angle(sprite.rotation, dir.angle() + SPRITE_OFFSET, 1.0 - exp(-TURN_SPEED * delta))
-		sprite.flip_v = dir.x > 0.0   # keeps the bug right-side up when facing left
+
+		anim_time += delta
+		facing_rot = lerp_angle(facing_rot, dir.angle() + SPRITE_OFFSET, 1.0 - exp(-TURN_SPEED * delta))
+		sprite.rotation = facing_rot + sin(anim_time * WOBBLE_SPEED + phase) * WOBBLE_ANGLE
+		sprite.flip_v = dir.x > 0.0
+
+		var buzz : float = sin(anim_time * BUZZ_SPEED + phase)
+		sprite.scale = base_scale * Vector2(1.0 + buzz * BUZZ_AMOUNT, 1.0 - buzz * BUZZ_AMOUNT)
 
 
 func take_damage(amount: float, dir: Vector2) -> void:
 	if dead:
+		return
+	if Time.get_ticks_msec() < immune_until:
 		return
 	health -= amount
 	if health <= 0.0:

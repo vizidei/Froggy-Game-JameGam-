@@ -9,7 +9,9 @@
 [ext_resource type="Script" uid="uid://djnoty14eqc2p" path="res://scripts/game_over.gd" id="7_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://fk6cg67piloi" path="res://assets/froggy/flower1.png" id="8_85g3d"]
 [ext_resource type="AudioStream" uid="uid://cie7r4fc80mid" path="res://assets/freesound_community-mosquito-buzzing-24278.wav" id="8_choun"]
+[ext_resource type="PackedScene" uid="uid://beu1egbaf6m5c" path="res://scenes/charger.tscn" id="8_eb6dy"]
 [ext_resource type="Texture2D" uid="uid://4rh1xjaywkhc" path="res://assets/froggy/flower2.png" id="9_choun"]
+[ext_resource type="PackedScene" uid="uid://b6x03cohsyht0" path="res://scenes/splitter.tscn" id="9_trceg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_elp06"]
 
@@ -266,6 +268,8 @@ texture = ExtResource("9_choun")
 [node name="Spawner" type="Node2D" parent="." unique_id=938055907]
 script = ExtResource("3_jyhfs")
 bug_scene = ExtResource("2_0wfyh")
+charger_scene = ExtResource("8_eb6dy")
+splitter_scene = ExtResource("9_trceg")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Spawner" unique_id=822831870]
 stream = ExtResource("8_choun")
@@ -390,6 +394,12 @@ theme_override_constants/outline_size = -3
 theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxFlat_vriq2")
 text = "RETRY"
+
+[node name="Charger" parent="." unique_id=1788764905 instance=ExtResource("8_eb6dy")]
+position = Vector2(-356.5304, -85.4317)
+
+[node name="Splitter" parent="." unique_id=1061085238 instance=ExtResource("9_trceg")]
+position = Vector2(652.43567, -233.27505)
 
 [connection signal="player_died" from="Froggy" to="." method="_on_froggy_player_died"]
 [connection signal="pressed" from="GameOver/ColorRect/Retry" to="GameOver" method="_on_retry_pressed"]

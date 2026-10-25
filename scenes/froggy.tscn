@@ -59,7 +59,7 @@ animations = [{
 radius = 19.199083
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5uy6h"]
-radius = 21.149529
+radius = 31.474684
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uxn4k"]
 radius = 11.025511
@@ -88,6 +88,7 @@ collision_layer = 0
 collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtArea" unique_id=1374270692]
+position = Vector2(0, -7.9306183)
 shape = SubResource("CircleShape2D_5uy6h")
 debug_color = Color(0.3362535, 0.6224327, 0, 0.41960785)
 

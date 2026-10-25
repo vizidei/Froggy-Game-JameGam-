@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b6x03cohsyht0"]
+
+[ext_resource type="Script" uid="uid://bdsqcl3pvo2rg" path="res://scripts/splitter.gd" id="1_wkpha"]
+[ext_resource type="PackedScene" uid="uid://g0y18wjh25nq" path="res://scenes/enemy.tscn" id="2_n84v5"]
+[ext_resource type="Texture2D" uid="uid://2edwfj5kodxu" path="res://assets/froggy/mosquito.png" id="3_k3deu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h58tt"]
+radius = 62.34782
+
+[node name="Splitter" type="CharacterBody2D" unique_id=1788764905]
+z_index = 2
+collision_layer = 32
+collision_mask = 17
+script = ExtResource("1_wkpha")
+spawn_scene = ExtResource("2_n84v5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=929454354]
+modulate = Color(0.38039216, 1, 0.5411765, 1)
+scale = Vector2(0.088674515, 0.088674515)
+texture = ExtResource("3_k3deu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=370617107]
+shape = SubResource("CircleShape2D_h58tt")
