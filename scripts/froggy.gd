@@ -29,6 +29,7 @@ var move_input: Vector2 = Vector2.ZERO
 
 @onready var weapon: Node2D = $Weapon
 
+const MAX_HEALTH : float = 100.0
 var player_health : float = 100.0
 var is_dead : bool = false
 
@@ -133,7 +134,11 @@ func _physics_process(delta: float) -> void:
 func add_shake(amount: float) -> void:
 	shake_strength = max(shake_strength, amount)
 
-
+func heal(amount: float) -> bool:
+	if is_dead or player_health >= MAX_HEALTH:
+		return false
+	player_health = min(player_health + amount, MAX_HEALTH)
+	return true
 
 func check_damage(delta : float) -> void:
 	const DAMAGE_RATE = 30.0

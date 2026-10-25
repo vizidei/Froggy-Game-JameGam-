@@ -5,8 +5,9 @@
 [ext_resource type="AudioStream" uid="uid://d0tce4fkud8ho" path="res://assets/metal-whoosh-hit-7-201910.wav" id="3_bmw2d"]
 [ext_resource type="AudioStream" uid="uid://t34u4dvnj42" path="res://assets/swing-whoosh-110410.wav" id="4_8fp1k"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_eb8fg"]
-radius = 62.125866
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yoh7s"]
+radius = 33.70558
+height = 171.50835
 
 [node name="Weapon" type="Node2D" unique_id=1297015559]
 script = ExtResource("1_uxn4k")
@@ -23,8 +24,9 @@ collision_layer = 0
 collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=162181901]
-position = Vector2(39.802322, -101.78868)
-shape = SubResource("CircleShape2D_eb8fg")
+position = Vector2(56.342087, -71.677765)
+rotation = 0.8180409
+shape = SubResource("CapsuleShape2D_yoh7s")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=321913640]
 stream = ExtResource("3_bmw2d")

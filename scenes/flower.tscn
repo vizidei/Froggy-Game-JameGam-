@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://daph36eiff0tr"]
+
+[ext_resource type="Script" uid="uid://yhx6vveyi6rw" path="res://scripts/flower.gd" id="1_yoh7s"]
+[ext_resource type="Texture2D" uid="uid://fk6cg67piloi" path="res://assets/froggy/flower1.png" id="2_agc10"]
+[ext_resource type="Texture2D" uid="uid://4rh1xjaywkhc" path="res://assets/froggy/flower2.png" id="3_agc10"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eb6dy"]
+radius = 34.06563
+
+[node name="Flower" type="Area2D" unique_id=1600936459]
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("1_yoh7s")
+flower_textures = Array[Texture2D]([ExtResource("2_agc10"), ExtResource("3_agc10")])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=712533244]
+scale = Vector2(0.07190639, 0.07190639)
+texture = ExtResource("2_agc10")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1439854852]
+shape = SubResource("CircleShape2D_eb6dy")

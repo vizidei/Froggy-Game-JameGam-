@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://c3c8mwdb3e10e"]
 
 [ext_resource type="Texture2D" uid="uid://pa2aka4v3f6e" path="res://assets/froggy/lilypad.png" id="1_hkbhg"]
+[ext_resource type="Script" uid="uid://de1cwmst7a3hp" path="res://scripts/lilipad.gd" id="1_sgdsa"]
+[ext_resource type="PackedScene" uid="uid://daph36eiff0tr" path="res://scenes/flower.tscn" id="2_4l7lq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uxn4k"]
 radius = 82.66145
@@ -8,6 +10,8 @@ radius = 82.66145
 [node name="Lilipad" type="Area2D" unique_id=844435388]
 collision_layer = 4
 collision_mask = 0
+script = ExtResource("1_sgdsa")
+flower_scene = ExtResource("2_4l7lq")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1108418484]
 position = Vector2(0.6091919, 1.5938225)

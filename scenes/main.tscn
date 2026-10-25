@@ -7,10 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://c3c8mwdb3e10e" path="res://scenes/lilipad.tscn" id="3_sugp2"]
 [ext_resource type="Script" uid="uid://bibxvchkquyc2" path="res://scripts/hud.gd" id="6_o6xl0"]
 [ext_resource type="Script" uid="uid://djnoty14eqc2p" path="res://scripts/game_over.gd" id="7_o6xl0"]
-[ext_resource type="Texture2D" uid="uid://fk6cg67piloi" path="res://assets/froggy/flower1.png" id="8_85g3d"]
 [ext_resource type="AudioStream" uid="uid://cie7r4fc80mid" path="res://assets/freesound_community-mosquito-buzzing-24278.wav" id="8_choun"]
 [ext_resource type="PackedScene" uid="uid://beu1egbaf6m5c" path="res://scenes/charger.tscn" id="8_eb6dy"]
-[ext_resource type="Texture2D" uid="uid://4rh1xjaywkhc" path="res://assets/froggy/flower2.png" id="9_choun"]
 [ext_resource type="PackedScene" uid="uid://b6x03cohsyht0" path="res://scenes/splitter.tscn" id="9_trceg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_elp06"]
@@ -124,146 +122,6 @@ position = Vector2(493.08936, -375.2615)
 
 [node name="Lilipad23" parent="Lilypads" unique_id=403337583 instance=ExtResource("3_sugp2")]
 position = Vector2(347.3252, -518.88196)
-
-[node name="Flower1" type="Sprite2D" parent="Lilypads" unique_id=1523720254]
-position = Vector2(-645.63104, -39.05745)
-scale = Vector2(0.07920249, 0.07920249)
-texture = ExtResource("8_85g3d")
-
-[node name="Flower2" type="Sprite2D" parent="Lilypads" unique_id=998042174]
-position = Vector2(-268.11102, -310.09747)
-scale = Vector2(0.07920249, 0.07920249)
-texture = ExtResource("8_85g3d")
-
-[node name="Flower3" type="Sprite2D" parent="Lilypads" unique_id=1003539509]
-position = Vector2(91.25891, -308.8875)
-scale = Vector2(0.07920249, 0.07920249)
-texture = ExtResource("8_85g3d")
-
-[node name="Flower12" type="Sprite2D" parent="Lilypads" unique_id=972964446]
-position = Vector2(564.8766, -374.50922)
-scale = Vector2(0.07920249, 0.07920249)
-texture = ExtResource("8_85g3d")
-
-[node name="Flower13" type="Sprite2D" parent="Lilypads" unique_id=9636937]
-position = Vector2(173.99951, -599.9055)
-scale = Vector2(0.07920249, 0.07920249)
-texture = ExtResource("8_85g3d")
-
-[node name="Flower14" type="Sprite2D" parent="Lilypads" unique_id=2111519188]
-position = Vector2(-527.86743, -274.65015)
-scale = Vector2(0.07920249, 0.07920249)
-texture = ExtResource("8_85g3d")
-
-[node name="Flower15" type="Sprite2D" parent="Lilypads" unique_id=1698594659]
-position = Vector2(-656.2577, 193.26111)
-scale = Vector2(0.07920249, 0.07920249)
-texture = ExtResource("8_85g3d")
-
-[node name="Flower16" type="Sprite2D" parent="Lilypads" unique_id=1288127747]
-position = Vector2(604.5121, 197.05872)
-scale = Vector2(0.07920249, 0.07920249)
-texture = ExtResource("8_85g3d")
-
-[node name="Flower24" type="Sprite2D" parent="Lilypads" unique_id=1392567385]
-position = Vector2(-177.7727, -581.4286)
-scale = Vector2(0.07920249, 0.07920249)
-texture = ExtResource("8_85g3d")
-
-[node name="Flower25" type="Sprite2D" parent="Lilypads" unique_id=397959776]
-position = Vector2(-132.20276, -634.59357)
-scale = Vector2(0.07920249, 0.07920249)
-texture = ExtResource("8_85g3d")
-
-[node name="Flower26" type="Sprite2D" parent="Lilypads" unique_id=2133284778]
-position = Vector2(-208.15271, -645.9861)
-scale = Vector2(0.07920249, 0.07920249)
-texture = ExtResource("8_85g3d")
-
-[node name="Flower27" type="Sprite2D" parent="Lilypads" unique_id=1267177895]
-position = Vector2(-352.45776, 367.9463)
-scale = Vector2(0.07920249, 0.07920249)
-texture = ExtResource("8_85g3d")
-
-[node name="Flower28" type="Sprite2D" parent="Lilypads" unique_id=93645887]
-position = Vector2(99.44458, 246.42627)
-scale = Vector2(0.07920249, 0.07920249)
-texture = ExtResource("8_85g3d")
-
-[node name="Flower17" type="Sprite2D" parent="Lilypads" unique_id=1241476929]
-position = Vector2(832.36194, -83.9563)
-scale = Vector2(0.07920249, 0.07920249)
-texture = ExtResource("8_85g3d")
-
-[node name="Flower4" type="Sprite2D" parent="Lilypads" unique_id=2085634299]
-position = Vector2(319.2588, 39.932922)
-scale = Vector2(0.07920249, 0.07920249)
-texture = ExtResource("8_85g3d")
-
-[node name="Flower5" type="Sprite2D" parent="Lilypads" unique_id=1152904365]
-position = Vector2(-201.04883, 211.4201)
-scale = Vector2(0.07920249, 0.07920249)
-texture = ExtResource("8_85g3d")
-
-[node name="Flower6" type="Sprite2D" parent="Lilypads" unique_id=1005126498]
-position = Vector2(361.55096, 242.0491)
-scale = Vector2(0.15432215, 0.15432215)
-texture = ExtResource("9_choun")
-
-[node name="Flower7" type="Sprite2D" parent="Lilypads" unique_id=436694632]
-position = Vector2(552.70984, -425.5804)
-scale = Vector2(0.15432215, 0.15432215)
-texture = ExtResource("9_choun")
-
-[node name="Flower8" type="Sprite2D" parent="Lilypads" unique_id=395517659]
-position = Vector2(809.4905, -348.54623)
-scale = Vector2(0.15432215, 0.15432215)
-texture = ExtResource("9_choun")
-
-[node name="Flower9" type="Sprite2D" parent="Lilypads" unique_id=1981627812]
-position = Vector2(626.8911, -128.85617)
-scale = Vector2(0.15432215, 0.15432215)
-texture = ExtResource("9_choun")
-
-[node name="Flower18" type="Sprite2D" parent="Lilypads" unique_id=103441299]
-position = Vector2(-387.04114, -440.25113)
-scale = Vector2(0.15432215, 0.15432215)
-texture = ExtResource("9_choun")
-
-[node name="Flower19" type="Sprite2D" parent="Lilypads" unique_id=186622599]
-position = Vector2(-421.21863, 349.6287)
-scale = Vector2(0.15432215, 0.15432215)
-texture = ExtResource("9_choun")
-
-[node name="Flower20" type="Sprite2D" parent="Lilypads" unique_id=11820236]
-position = Vector2(-880.71606, -60.501312)
-scale = Vector2(0.15432215, 0.15432215)
-texture = ExtResource("9_choun")
-
-[node name="Flower21" type="Sprite2D" parent="Lilypads" unique_id=1140125453]
-position = Vector2(-284.50867, -56.703827)
-scale = Vector2(0.15432215, 0.15432215)
-texture = ExtResource("9_choun")
-
-[node name="Flower22" type="Sprite2D" parent="Lilypads" unique_id=884021902]
-position = Vector2(72.4563, 444.56607)
-scale = Vector2(0.15432215, 0.15432215)
-texture = ExtResource("9_choun")
-
-[node name="Flower23" type="Sprite2D" parent="Lilypads" unique_id=2093278896]
-position = Vector2(562.33374, 463.5535)
-scale = Vector2(0.15432215, 0.15432215)
-texture = ExtResource("9_choun")
-
-[node name="Flower10" type="Sprite2D" parent="Lilypads" unique_id=1697390930]
-position = Vector2(61.973877, -496.9083)
-scale = Vector2(0.15432215, 0.15432215)
-texture = ExtResource("9_choun")
-
-[node name="Flower11" type="Sprite2D" parent="Lilypads" unique_id=1488503187]
-position = Vector2(-691.2492, -285.77756)
-scale = Vector2(0.15432215, 0.15432215)
-texture = ExtResource("9_choun")
 
 [node name="Spawner" type="Node2D" parent="." unique_id=938055907]
 script = ExtResource("3_jyhfs")
